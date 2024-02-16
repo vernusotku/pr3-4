@@ -7,16 +7,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Runtime.InteropServices;
 
 namespace WindowsFormsApp3
 {
 
     public partial class Form1 : Form
     {
+        [DllImport("user32.dll", EntryPoint = "GetSystemMetrics")]
+        public static extern int GetSystemMetrics(int nIndex);
+
         public Form1()
         {
             InitializeComponent();
         }
+
+
+        public enum SystemMetric : int
+        {
+            SM_CXBORDER = 5,
+        }
+
+
+
 
         private string GetInfo(string parametr)
         {
@@ -29,7 +42,7 @@ namespace WindowsFormsApp3
                 case "GetVersionEx":
                     return String.Format("Версия ОС: {0}",System.Environment.OSVersion);
                 case "GetSystemMetrics":
-                    return "3";
+                    return GetSystemMetrics(SystemMetric.SM_CXBORDER).ToString();
                 default:
                     return "000";
             };
