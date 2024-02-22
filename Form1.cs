@@ -17,10 +17,6 @@ namespace WindowsFormsApp3
         private SystemTime lt = new SystemTime();
         private SystemInfo si = new SystemInfo();
         private SysColor sc = new SysColor();
-        /// TODO:
-        /// GetLocalTime: Создать класс и извлечь фигни https://learn.microsoft.com/en-us/previous-versions/aa915317(v=msdn.10) ++++
-        /// GetSystemlnfo: понять и простить :с (https://learn.microsoft.com/ru-ru/windows/win32/api/sysinfoapi/nf-sysinfoapi-getsysteminfo)
-        /// GetSysColor or SetSysColor:(Ой бл..........) https://learn.microsoft.com/en-us/windows/win32/api/winuser/nf-winuser-getsyscolor 
 
 
 
