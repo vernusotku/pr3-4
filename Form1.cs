@@ -40,7 +40,7 @@ namespace WindowsFormsApp3
                 case "GetSystemInfo":
                      return si.GetInfo();
                 case "GetSysColor": 
-                    return sc.GetColor();  
+                    return sc.GetColor(0);  
                 default:
                     return "000";
             };
@@ -54,6 +54,17 @@ namespace WindowsFormsApp3
 
         }
 
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ChangeSysColor changeSysColor = new ChangeSysColor();
+            changeSysColor.HEXDesktopColor.Text = sc.GetColor(1);
+            changeSysColor.Show();
+        }
 
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MathematicQuiz mq = new MathematicQuiz();
+            mq.Show();
+        }
     }
 }
