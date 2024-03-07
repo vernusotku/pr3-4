@@ -66,5 +66,12 @@ namespace WindowsFormsApp3
             MathematicQuiz mq = new MathematicQuiz();
             mq.Show();
         }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            string[] ds = DriverDisk.GetLogicalDriveStrings();
+
+
+        }
     }
 }
