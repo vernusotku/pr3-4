@@ -52,6 +52,7 @@
     <Compile Include="ChangeSysColor.Designer.cs">
       <DependentUpon>ChangeSysColor.cs</DependentUpon>
     </Compile>
+    <Compile Include="DriverDisk.cs" />
     <Compile Include="MathematicQuiz.cs">
       <SubType>Form</SubType>
     </Compile>
