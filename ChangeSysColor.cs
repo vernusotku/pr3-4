@@ -18,26 +18,24 @@ namespace WindowsFormsApp3
         {
             InitializeComponent();
         }
-        int red, green, blue;
+        int Red, Green, Blue;
         SysColor sc = new SysColor();
 
         private void TackBar_Scroll(object sender, EventArgs e)
         {
-            red = this.RedTackBar.Value;
-            green = this.GreenTrackBar.Value;
-            blue = this.BlueTrackBar.Value;
-            string hexValue = "#"+red.ToString("X2") + green.ToString("X2") + blue.ToString("X2");
+            Red = this.RedTackBar.Value;
+            Green = this.GreenTrackBar.Value;
+            Blue = this.BlueTrackBar.Value;
+            string hexValue = "#"+Red.ToString("X2") + Green.ToString("X2") + Blue.ToString("X2");
             this.pictureBox1.BackColor = ColorTranslator.FromHtml(hexValue);
             this.HEXColor.Text = hexValue;
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            RGB rGB = new RGB();
-            rGB.r = (byte)red;
-            rGB.g = (byte)green;
-            rGB.b = (byte)blue;
-            bool @bool = sc.SetSysColor(rGB);
+            COLORREF newColor = new COLORREF(Color.FromArgb(Red, Green, Blue));
+            COLORREF[] colors = { newColor };
+            bool @bool = sc.SetSysColor(colors);
             if (@bool)
             {
                 this.HEXDesktopColor.Text = sc.GetColor(1) + "\n" + "OK";
