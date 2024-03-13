@@ -13,7 +13,7 @@ namespace WindowsFormsApp3
         public static extern uint GetLogicalDriveStrings(uint bufferLenght, StringBuilder buffer);
 
 
-        public extern String[] GetDriveStrings() {
+        public String[] GetDriveStrings() {
             uint bS = 256;
             StringBuilder sb = new StringBuilder((int)bS);
             uint res = GetLogicalDriveStrings(bS, sb);

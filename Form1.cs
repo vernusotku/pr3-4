@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using System.Windows.Forms;
 
 
@@ -17,7 +18,7 @@ namespace WindowsFormsApp3
         private SystemTime lt = new SystemTime();
         private SystemInfo si = new SystemInfo();
         private SysColor sc = new SysColor();
-
+        private DriverDisk dd = new DriverDisk();
 
 
 
@@ -69,7 +70,8 @@ namespace WindowsFormsApp3
 
         private void button4_Click(object sender, EventArgs e)
         {
-            string[] ds = DriverDisk.GetLogicalDriveStrings();
+            string[] ds = dd.GetDriveStrings();
+            richTextBox1.Text = String.Join(" ", ds);
 
 
         }
